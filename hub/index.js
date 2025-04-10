@@ -27,7 +27,7 @@ wss.on("connection", (ws) => {
   console.log("New connection established");
   ws.on("message", async (msg) => {
     const data = JSON.parse(msg.toString());
-    console.log("Received message:", data);
+    //console.log("Received message:", data);
 
     if (data.type === "signup") {
       const verified = await verifyMessage(
@@ -60,7 +60,7 @@ wss.on("connection", (ws) => {
 
 async function signupHandler(ws, { ip, publicKey, signedMessage, callbackId }) {
   let validator = await Validator.findOne({ publicKey });
-  console.log("Validator found:", validator);
+  //console.log("Validator found:", validator);
   if (!validator) {
     validator = await Validator.create({
       ip,
@@ -91,7 +91,7 @@ async function verifyMessage(message, publicKey, signature) {
     new Uint8Array(JSON.parse(signature)),
     new PublicKey(publicKey).toBytes()
   );
-  console.log("Verification result:", result);
+  //console.log("Verification result:", result);
   return result;
 }
 

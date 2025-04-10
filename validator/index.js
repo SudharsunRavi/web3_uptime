@@ -23,7 +23,7 @@ async function main() {
 
     CALLBACKS[callbackId] = (data) => {
       validatorId = data.validatorId;
-      console.log(`Registered validator ID: ${validatorId}`);
+      //console.log(`Registered validator ID: ${validatorId}`);
     };
 
     const signedMessage = await signMessage(
@@ -65,7 +65,7 @@ async function main() {
 }
 
 async function validateHandler(ws, { url, callbackId, websiteId }, keypair) {
-  console.log(`Validating ${url}`);
+  //console.log(`Validating ${url}`);
   const startTime = Date.now();
   const signature = await signMessage(`Replying to ${callbackId}`, keypair);
 
