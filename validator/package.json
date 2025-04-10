@@ -1,0 +1,15 @@
+{
+  "scripts": {
+    "start": "nodemon index.js"
+  },
+  "type": "module",
+  "dependencies": {
+    "@solana/web3.js": "^1.98.0",
+    "dotenv": "^16.4.7",
+    "node-fetch": "^3.3.2",
+    "nodemon": "^3.1.9",
+    "tweetnacl": "^1.0.3",
+    "tweetnacl-util": "^0.15.1",
+    "ws": "^8.18.1"
+  }
+}
